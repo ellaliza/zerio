@@ -28,6 +28,7 @@ import LessonDemo from "./components/LessonDemo";
 import HomeScreen from "./components/HomeScreen";
 import GlossaryPage from "./components/GlossaryPage";
 import { Lesson } from "./types";
+import { Analytics } from "@vercel/analytics/react";
 
 function renderMarkdown(text: string) {
   // Matches **bold** (content may include `code` spans with * inside), `code`, *italic*
@@ -213,7 +214,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen lg:h-screen lg:overflow-hidden bg-[#090d16] flex flex-col font-sans text-slate-100 antialiased selection:bg-indigo-500/40 selection:text-indigo-200">
-      
+      <Analytics />
       {/* Brand Header */}
       <header className="sticky top-0 z-40 bg-slate-950 border-b-3 border-slate-900 px-4 md:px-6 py-4 flex items-center justify-between shadow-[0_4px_20px_0_rgba(0,0,0,0.4)]">
         <div className="flex items-center gap-3">

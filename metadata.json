@@ -1,0 +1,6 @@
+{
+  "name": "Zerio: Tailwind CSS Fundamentals",
+  "description": "An interactive, textbook-style learning platform with hands-on lesson modules, a live Tailwind CSS playground, and challenges centered around building MediCore HMS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

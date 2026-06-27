@@ -22,6 +22,7 @@ export interface Lesson {
   examples: LessonExample[];
   playgroundPrompt: string;
   challenge: LessonChallenge;
+  commonMistakes: string[];
 }
 
 export interface UserProgress {

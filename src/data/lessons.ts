@@ -62,7 +62,12 @@ Because these classes are pre-built, you don't write *any* custom CSS. You style
   Emergency Room
 </span>`,
       solutionHint: "Combine the utilities: bg-slate-100 (or bg-gray-100), text-slate-700, font-bold, text-xs, px-3, py-1, and rounded-full."
-    }
+    },
+    commonMistakes: [
+      "Forgetting to check that Tailwind is properly set up before expecting classes to work",
+      "Trying to write custom CSS alongside Tailwind and wondering why things conflict",
+      "Expecting Tailwind classes to work in a plain HTML file without a build step or CDN link"
+    ]
   },
   {
     id: 2,
@@ -126,7 +131,12 @@ Because these classes are pre-built, you don't write *any* custom CSS. You style
   <p>CRITICAL: Severe Asthma</p>
 </div>`,
       solutionHint: "For Eleanor, use 'text-2xl font-bold text-slate-900'. For the MRN, use 'text-xs font-mono text-slate-500 mt-0.5'. For the alert, use 'text-xs font-bold text-red-600 mt-2'."
-    }
+    },
+    commonMistakes: [
+      "Using text-md — it does not exist in Tailwind, the base size is text-base",
+      "Confusing font-size utilities (text-) with font-weight utilities (font-) — they are different things",
+      "Forgetting that text color needs its own class (text-color) and is not controlled by font utilities"
+    ]
   },
   {
     id: 3,
@@ -199,7 +209,12 @@ You can apply margin (\`m\`) or padding (\`p\`) to all sides, or specify directi
   </p>
 </div>`,
       solutionHint: "Add a class list of 'p-5 mt-3' or 'p-6 mt-4' to the notes card div to give it beautiful internal breathing room and push it away from the 'SESSION NOTES' header."
-    }
+    },
+    commonMistakes: [
+      "Confusing margin (space outside the element) with padding (space inside the element)",
+      "Using negative margin without understanding it can cause layout shifts",
+      "Forgetting that m-auto only works horizontally for centering block elements, and the element needs a defined width"
+    ]
   },
   {
     id: 4,
@@ -278,7 +293,12 @@ You can append an opacity percentage to any color using a slash (\`/\`). For ins
   </div>
 </div>`,
       solutionHint: "For Stable: 'bg-emerald-500/10 border-emerald-200 text-emerald-800'. For Urgent: 'bg-amber-500/10 border-amber-200 text-amber-800'. For Immediate: 'bg-rose-500/10 border-rose-200 text-rose-800'."
-    }
+    },
+    commonMistakes: [
+      "Using bg-blue instead of bg-blue-500 — Tailwind color classes require a shade number",
+      "Expecting opacity-50 to only affect the background and not the text inside — use bg-opacity or bg-color/opacity syntax instead",
+      "Confusing text color (text-) with background color (bg-)"
+    ]
   },
   {
     id: 5,
@@ -352,7 +372,12 @@ You can append an opacity percentage to any color using a slash (\`/\`). For ins
   <p class="text-xs text-slate-500">Chief of Medicine • Starfleet Medical</p>
 </div>`,
       solutionHint: "For the card, append 'max-w-sm' to the class list. For the avatar placeholder, add the classes 'w-16 h-16 rounded-full' to make it a perfect, clean circular avatar bubble."
-    }
+    },
+    commonMistakes: [
+      "Using w-screen and being surprised that it causes horizontal scroll — it includes scrollbar width",
+      "Forgetting that h-full only works if the parent has a defined height",
+      "Mixing up w-1/2 (50% of parent) with w-50 (which does not exist as a percentage — it maps to a fixed rem value)"
+    ]
   },
   {
     id: 6,
@@ -436,7 +461,12 @@ You can append an opacity percentage to any color using a slash (\`/\`). For ins
   </div>
 </div>`,
       solutionHint: "Make the main container flex-row, justify-between, and items-center with 'flex items-center justify-between'. Make the button container a horizontal flex row with a gap: 'flex items-center gap-2'."
-    }
+    },
+    commonMistakes: [
+      "Applying justify-center or items-center without first adding the flex class to the parent — nothing will work without flex",
+      "Confusing justify-content (main axis) with align-items (cross axis) — this is the most common flexbox mistake",
+      "Trying to use flex utilities on the children instead of the parent container"
+    ]
   },
   {
     id: 7,
@@ -535,7 +565,12 @@ You can append an opacity percentage to any color using a slash (\`/\`). For ins
   </div>
 </div>`,
       solutionHint: "For the main container, apply 'grid grid-cols-3 gap-4'. For the Heart Rate container, append the class 'col-span-2' to make it span double-width."
-    }
+    },
+    commonMistakes: [
+      "Forgetting to add the grid class to the parent before using grid-cols — same pattern as flexbox",
+      "Confusing col-span (how many columns an item takes up) with grid-cols (how many columns the grid has)",
+      "Expecting grid items to automatically fill rows — they do, but only if grid-flow is set correctly"
+    ]
   },
   {
     id: 8,
@@ -605,7 +640,12 @@ You can append an opacity percentage to any color using a slash (\`/\`). For ins
          placeholder="e.g. BCBS-92841" />
 </div>`,
       solutionHint: "Apply the classes 'border-2 border-slate-200 rounded-md bg-slate-50 text-slate-800' to the input element."
-    }
+    },
+    commonMistakes: [
+      "Adding rounded without a border and wondering why nothing is visible — rounded only clips the element, it does not draw a border",
+      "Using border without border-color and getting an invisible border — Tailwind's default border color is transparent unless you add a color class",
+      "Confusing border-radius (rounded-) with border-width (border-)"
+    ]
   },
   {
     id: 9,
@@ -674,7 +714,12 @@ Gradients replace flat background colors with premium color blends.
   </p>
 </div>`,
       solutionHint: "Apply the classes 'bg-gradient-to-b from-violet-600 to-indigo-700 rounded-xl shadow-lg' to the welcome card container."
-    }
+    },
+    commonMistakes: [
+      "Expecting shadow to show on elements with the same background as their parent — shadows need contrast to be visible",
+      "Using gradient utilities without specifying both from- and to- colors",
+      "Forgetting that shadow is invisible on transparent backgrounds"
+    ]
   },
   {
     id: 10,
@@ -754,7 +799,12 @@ You declare a responsive style simply by prepending the breakpoint prefix to the
   </div>
 </div>`,
       solutionHint: "For the main container, use the classes 'flex flex-col md:flex-row md:items-center md:justify-between p-4'. This overrides the stacked vertical column with a horizontal row once we cross the md: threshold!"
-    }
+    },
+    commonMistakes: [
+      "Thinking sm: means 'only on small screens' — it actually means 'small screens and above.' Tailwind is mobile-first",
+      "Forgetting that unprefixed classes apply to all screen sizes and prefixed classes override upward",
+      "Stacking too many breakpoint prefixes and getting confused — start with mobile styles first, then add md: and lg: on top"
+    ]
   },
   {
     id: 11,
@@ -811,7 +861,12 @@ By default, color changes snap instantly. To make hover animations look creamy a
   Book Consultation
 </button>`,
       solutionHint: "Combine the utilities: 'bg-emerald-600 hover:bg-emerald-700 active:scale-95 transition-all duration-150 shadow' to create the ultimate organic interaction state."
-    }
+    },
+    commonMistakes: [
+      "Forgetting the colon syntax — hover-bg-blue-500 does nothing, it must be hover:bg-blue-500",
+      "Applying hover: classes to a parent and expecting child elements to change — use group and group-hover: for that",
+      "Confusing focus: (keyboard/click focus) with hover: (mouse hover) and wondering why mobile users never see the effect"
+    ]
   },
   {
     id: 12,
@@ -928,7 +983,12 @@ By layering these elements systematically, you can design stunning UI widgets fr
   </button>
 </div>`,
       solutionHint: "For the master card, add 'bg-white border border-slate-200 p-5 rounded-2xl shadow-md'. For the Priority Badge, use 'bg-red-50 text-red-700 border border-red-200'. For the vital display box, use 'bg-slate-50 border border-slate-100'. For the button, use 'bg-indigo-600 hover:bg-indigo-700 active:scale-95 shadow'."
-    }
+    },
+    commonMistakes: [
+      "Nesting too many divs and losing track of which class belongs to which element — read your HTML structure before adding classes",
+      "Trying to make everything perfect in one pass — build the structure first, then layer styles one property at a time",
+      "Forgetting that Tailwind classes are just CSS — if something is not working, inspect the element in the browser DevTools to see what is actually being applied"
+    ]
   }
 ];
 

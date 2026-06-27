@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+EXPLANATION-playground.md
+EXPLANATION-main-app.md
+EXPLANATION-helpers.md
